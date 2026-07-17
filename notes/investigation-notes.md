@@ -8,6 +8,20 @@ Unlike malware-focused investigations, this lab emphasizes browser history, down
 
 ---
 
+## Investigation Methodology
+
+The investigation followed a structured DFIR workflow:
+
+1. Identify browser activity.
+2. Review download history.
+3. Verify downloaded files.
+4. Compare browser evidence with Windows metadata.
+5. Correlate artifacts.
+6. Reconstruct the investigation timeline.
+7. Document findings.
+
+---
+
 # Browser History
 
 Browser history records websites visited by a user, including visit timestamps and page titles.
@@ -122,6 +136,15 @@ The reconstructed timeline provides a clear sequence of user actions.
 • Windows file metadata confirmed browser evidence.
 
 • Browser artifacts enabled complete reconstruction of user activity.
+
+---
+
+## Analyst Observations
+
+- Browser history alone is insufficient to establish user activity.
+- Download history strengthens confidence in browser evidence.
+- Windows metadata independently validates downloaded files.
+- Evidence correlation reduces the likelihood of false conclusions.
 
 ---
 
