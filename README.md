@@ -8,19 +8,23 @@ The investigation focuses on browser history, download records, file system meta
 No malware or third-party forensic tools are required, making this an excellent beginner-friendly DFIR investigation.
 
 ---
+## Executive Summary
+
+A Windows user reported suspicious browser activity after downloading files from the Internet. This investigation analyzes Microsoft Edge browser artifacts, download records, and Windows file system metadata to reconstruct user activity and validate whether downloaded files correspond to browser evidence.
+
+The investigation follows a structured DFIR methodology by collecting multiple forensic artifacts, correlating evidence, and reconstructing a chronological timeline of user actions.
 
 ## Investigation Scenario
 
-The SOC receives a request to investigate a user's browsing activity after reports of unauthorized downloads.
+The Security Operations Center (SOC) receives a request to investigate suspected unauthorized downloads performed by a Windows user.
 
-As the DFIR analyst, the objectives are to determine:
+The objective is to determine:
 
-- Which websites were visited
+- Which websites were accessed
 - Which files were downloaded
-- Where the files were saved
-- Whether browser evidence matches file system evidence
-- Build an activity timeline
-
+- Where the files were stored
+- Whether browser artifacts align with Windows file system evidence
+- Whether a reliable timeline of user activity can be reconstructed
 ---
 
 ## Objectives
@@ -35,12 +39,14 @@ As the DFIR analyst, the objectives are to determine:
 
 ## Skills Demonstrated
 
-- Browser Forensics
+- Browser Artifact Analysis
+- Download Forensics
 - Windows File System Analysis
 - Timeline Reconstruction
-- Digital Evidence Correlation
+- Evidence Correlation
 - User Activity Reconstruction
-- DFIR Documentation
+- Incident Documentation
+- Windows DFIR Methodology
 
 ---
 
@@ -52,6 +58,17 @@ As the DFIR analyst, the objectives are to determine:
 - PowerShell
 
 ---
+## Lab Environment
+
+| Component | Details |
+|------------|---------|
+| Operating System | Windows 10 |
+| Browser | Microsoft Edge |
+| Investigation Type | Windows Digital Forensics |
+| Evidence Sources | Browser History, Download History, File Metadata |
+| Analysis Method | Native Windows Artifacts |
+
+---
 
 ## MITRE ATT&CK Mapping
 
@@ -59,6 +76,7 @@ As the DFIR analyst, the objectives are to determine:
 |---------|-----------|-----|
 | Collection | Data from Local System | T1005 |
 | Discovery | File and Directory Discovery | T1083 |
+| Execution(simulated) | User Execution: Malicious File | T1204.002 |
 
 ---
 
@@ -86,6 +104,30 @@ As the DFIR analyst, the objectives are to determine:
 
 ---
 
+## Evidence Correlation
+
+| Artifact | Investigation Purpose |
+|----------|-----------------------|
+| Browser History | Identify websites visited |
+| Download History | Confirm downloaded files |
+| Downloads Folder | Verify file presence |
+| File Metadata | Validate timestamps |
+| Timeline | Reconstruct user activity |
+
+Rather than relying on a single artifact, the investigation correlates multiple evidence sources to improve confidence in the findings.
+
+---
+
+## Investigation Findings
+
+- Browser history successfully identified websites visited during the investigation.
+- Download history confirmed that the expected files were downloaded.
+- Windows file metadata validated the download timestamps.
+- Browser artifacts and file system evidence were successfully correlated.
+- A complete user activity timeline was reconstructed.
+  
+---
+
 ## Key Takeaway
 
-Browser history and download artifacts provide valuable forensic evidence for reconstructing user activity. Correlating browser records with Windows file system metadata enables investigators to validate downloaded files, identify user behavior, and establish an accurate investigation timeline.
+This investigation demonstrates how browser artifacts and Windows file system metadata can be correlated to reconstruct user activity during a forensic investigation. By validating evidence across multiple sources, investigators can establish a reliable timeline and strengthen confidence in their findings.
