@@ -101,6 +101,29 @@ Browser history is intentionally preserved because it represents forensic eviden
 
 ---
 
+## Issue 8
+
+### Browser history was cleared
+
+Possible Causes
+
+- User manually cleared browsing history.
+- Browser privacy settings removed artifacts.
+
+Resolution
+
+Investigate additional forensic artifacts such as:
+
+- Recent Files
+- Jump Lists
+- Windows Timeline
+- Prefetch
+- NTFS Metadata
+
+These artifacts may still provide evidence of user activity.
+
+---
+
 # Lessons Learned
 
 - Browser history alone is not sufficient evidence.
